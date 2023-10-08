@@ -1,0 +1,63 @@
+.circleBox{
+	background: #38d9a9;
+    z-index: 5;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%, 50%);
+    color: white;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.125s all ease-in; /* X자로 회전시 자연스럽게 처리 */
+}
+.circleBox:hover{
+    background: #63e6be;
+}
+.formWrap.active + .circleBox{ /* 회전되서 빨간색X */
+    background: #fa5252;
+    transform: translate(-50%, 50%) rotate(45deg); /* 회전처리 */
+}
+
+.formWrap{
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+
+    transition: 0.3s;
+
+    opacity: 0; /* 처음엔 안보이게 처리 */
+}
+.formWrap.active{ opacity: 1; } /* 활성화 시 보이게 처리 */
+.formWrap form{
+    background: #f8f9fa;
+    padding-left: 32px;
+    padding-top: 32px;
+    padding-right: 32px;
+    padding-bottom: 72px;
+
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-top: 1px solid #e9ecef;
+}
+.formWrap input{
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    box-sizing: border-box;
+}
